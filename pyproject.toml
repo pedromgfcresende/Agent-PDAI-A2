@@ -1,0 +1,21 @@
+[project]
+name = "extremoambiente-agent"
+version = "0.1.0"
+description = "Multi-agent event planner for Extremo Ambiente"
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=0.2.0",
+    "langchain>=0.3.0",
+    "langchain-openai>=0.3.0",
+    "langchain-community>=0.3.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+    "langgraph-cli[inmem]>=0.4.18",
+]
+
+[tool.setuptools.packages.find]
+include = ["agent*"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"

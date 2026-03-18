@@ -1,0 +1,141 @@
+---
+format:
+  pdf:
+    documentclass: article
+    geometry:
+      - top=20mm
+      - bottom=25mm
+      - left=20mm
+      - right=20mm
+    fontsize: 11pt
+    colorlinks: true
+    linkcolor: "orange"
+    urlcolor: "orange"
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \usepackage{xcolor}
+        \usepackage{graphicx}
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{float}
+        \usepackage{tikz}
+
+        \definecolor{eaorange}{HTML}{E86825}
+        \definecolor{eagray}{HTML}{2C2C2C}
+        \definecolor{ealightgray}{HTML}{F5F5F5}
+
+        \pagestyle{fancy}
+        \fancyhf{}
+        \renewcommand{\headrulewidth}{3pt}
+        \renewcommand{\headrule}{\hbox to\headwidth{\color{eaorange}\leaders\hrule height \headrulewidth\hfill}}
+        \fancyhead[L]{\small\color{eagray}\textbf{EXTREMO AMBIENTE} \textbar\ Event Proposal}
+        \fancyhead[R]{\small\color{eagray}{{date}}}
+        \fancyfoot[C]{\small\color{eagray}\thepage}
+        \fancyfoot[R]{\small\color{eagray}Extremo Ambiente Lda.}
+---
+
+\begin{center}
+\includegraphics[width=4cm]{assets/logo.png}
+
+\vspace{0.5cm}
+
+{\Huge\bfseries\color{eagray} Event Proposal}
+
+\vspace{0.3cm}
+
+{\Large\color{eaorange} {{client_name}}}
+
+\vspace{0.2cm}
+
+{\large {{date}} \textbar\ {{location}}}
+
+\vspace{0.5cm}
+\textcolor{eaorange}{\rule{0.6\textwidth}{2pt}}
+\end{center}
+
+\vspace{1cm}
+
+# Event Overview
+
+| | |
+|---|---|
+| **Client** | {{client_name}} |
+| **Date** | {{date}} |
+| **Group Size** | {{group_size}} people |
+| **Location** | {{location}} |
+| **Duration** | {{start_time}} - {{end_time}} ({{duration_hours}}h) |
+| **Preferences** | {{preferences}} |
+
+{{#special_requests}}
+
+::: {.callout-note}
+**Special Requests:** {{special_requests_text}}
+:::
+
+{{/special_requests}}
+
+\vspace{0.5cm}
+
+# Executive Summary
+
+{{executive_summary}}
+
+\vspace{0.5cm}
+
+# Detailed Itinerary
+
+{{itinerary_table}}
+
+\vspace{0.5cm}
+
+# Pricing Breakdown
+
+{{pricing_table}}
+
+{{#has_discount}}
+*Group discount (5%) applied for groups over 10 people.*
+{{/has_discount}}
+
+\vspace{0.3cm}
+
+| | |
+|---|---|
+| **Total** | **EUR {{total}}** |
+| **Per Person** | **EUR {{per_person}}** |
+
+\vspace{0.5cm}
+
+# What's Included
+
+- Professional guide throughout the experience
+- All transportation between stops
+- Activity fees and entrance tickets
+- Coordination and event management
+
+{{#has_food}}
+- Food and beverage experiences as listed in the itinerary
+{{/has_food}}
+
+\vspace{0.5cm}
+
+# Route Map
+
+View the full route on Google Maps:
+
+{{google_maps_url}}
+
+\vspace{0.5cm}
+
+---
+
+\begin{center}
+\textcolor{eaorange}{\rule{0.4\textwidth}{1pt}}
+
+\vspace{0.3cm}
+
+{\small\color{eagray} \textbf{Extremo Ambiente} \textbar\ Adventure Tourism \& Corporate Events}
+
+{\small\color{eagray} Porto, Portugal \textbar\ info@extremoambiente.pt}
+\end{center}

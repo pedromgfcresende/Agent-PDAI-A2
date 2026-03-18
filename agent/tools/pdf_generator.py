@@ -237,6 +237,9 @@ def _fallback_pdf(
             f"EUR {item.get('cost', 0)} |"
         )
 
+    itinerary_section = "\n".join(itinerary_lines)
+    pricing_section = "\n".join(pricing_lines)
+
     simple_qmd = f"""---
 title: "Event Proposal — {client_name}"
 subtitle: "Extremo Ambiente | {date}"
@@ -269,13 +272,13 @@ format:
 
 | Time | Activity | Duration |
 |------|----------|----------|
-{"\\n".join(itinerary_lines)}
+{itinerary_section}
 
 # Pricing
 
 | Activity | Cost |
 |----------|------|
-{"\\n".join(pricing_lines)}
+{pricing_section}
 
 **Total: EUR {pricing.get('total', 0)}** | Per Person: EUR {pricing.get('per_person', 0)}
 
